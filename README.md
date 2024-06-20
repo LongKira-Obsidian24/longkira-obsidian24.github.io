@@ -1,0 +1,1 @@
+# longkira-obsidian24.github.io
