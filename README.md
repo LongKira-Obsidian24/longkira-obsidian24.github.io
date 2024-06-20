@@ -2,4 +2,4 @@
 
 This is where I share stuffs.
 
-Some public instructions are [here](https://longkira-obsidian24.github.io/Instruction-Notes-Public/).
+Some public instructions are [here](/Instruction-Notes-Public/).
