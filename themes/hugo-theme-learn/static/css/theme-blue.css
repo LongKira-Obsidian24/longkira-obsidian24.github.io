@@ -69,12 +69,15 @@ a:hover {
 #sidebar {
 	background-color: var(--MENU-SECTIONS-BG-color);
 }
-#sidebar #header-wrapper {
+#header-wrapper {
     background: var(--MENU-HEADER-BG-color);
     color: var(--MENU-SEARCH-BOX-color);
     border-color: var(--MENU-HEADER-BORDER-color);
 }
-#sidebar .searchbox {
+.fas {
+    color: rgb(201, 234, 255);
+}
+.searchbox {
 	border-color: var(--MENU-SEARCH-BOX-color);
     background: var(--MENU-SEARCH-BG-color);
 }

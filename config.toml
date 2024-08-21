@@ -7,18 +7,18 @@ home = [ "HTML", "RSS", "JSON"]
 
 [params]
   # Change default color scheme with a variant one. Can be "red", "blue", "green".
-  themeVariant = "workshop"
+  themeVariant = "metro-green"
   # Git hub repo link
   editURL = ""
   description = ""
-  author = "journeyoftheaverageguy@gmail.com"
+  author = "whoishebtw"
   showVisitedLinks = true
   disableBreadcrumb = false
   disableNextPrev = false
   
 [Languages]
 [Languages.en]
-title = "Obsidan 24 - Discover with Long Kira"
+title = "Obsidan 24"
 weight = 1
 languageName = "English"
 
@@ -29,7 +29,7 @@ url = "/"
 weight = 20
 
 [Languages.vi]
-title = "Obsidian 24 - Khám phá cùng Long Kira"
+title = "Obsidian 24"
 weight = 2
 languageName = "Tiếng Việt"
 
@@ -41,3 +41,6 @@ weight = 20
 
 [markup.goldmark.renderer]
   unsafe = true
+
+# [security]
+#   enableInlineShortcodes = true

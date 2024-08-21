@@ -27,7 +27,6 @@ function getScrollBarWidth() {
 
 function setMenuHeight() {
     $('#sidebar .highlightable').height($('#sidebar').innerHeight());
-    $('#sidebar').top($('#header-wrapper').height() - 20);
     $('#sidebar .highlightable').perfectScrollbar('update');
 }
 
