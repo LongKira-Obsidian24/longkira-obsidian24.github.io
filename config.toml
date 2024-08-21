@@ -28,6 +28,12 @@ identifier = "Back En"
 url = "/"
 weight = 20
 
+[[Languages.en.menu.shortcuts]]
+name = "<i class='fab fa-github'></i> See the site's source"
+identifier = "GH En"
+url = "https://github.com/LongKira-Obsidian24"
+weight = 21
+
 [Languages.vi]
 title = "Obsidian 24"
 weight = 2
@@ -35,9 +41,15 @@ languageName = "Tiếng Việt"
 
 [[Languages.vi.menu.shortcuts]]
 name = "<i class='fab fa-windows'></i>Trang chủ Blog"
+identifier = "GH Vi"
+url = "https://github.com/LongKira-Obsidian24"
+weight = 20
+
+[[Languages.vi.menu.shortcuts]]
+name = "<i class='fab fa-github'></i> Xem mã nguồn website này"
 identifier = "Back Vi"
 url = "/vi"
-weight = 20
+weight = 21
 
 [markup.goldmark.renderer]
   unsafe = true

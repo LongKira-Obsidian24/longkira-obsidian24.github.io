@@ -5,9 +5,9 @@
 
     <div id="header-wrapper" style="box-shadow: 0px 1px 9px 1px rgb(0, 0, 0);">
         
-        <div id="upper" style="display: grid; grid-template-columns: 270px 1fr 300px;">
-            <div id="navigation-buttons" style="display: grid; grid-template-columns: 1fr 1fr;">
-                    <!-- Next prev page -->
+        {{/*  <div id="upper" style="display: grid; grid-template-columns: 270px 1fr 300px;">
+            <div id="navigation-buttons" style="display: grid; grid-template-columns: 1fr 1fr;">  */}}
+                    {{/*  <!-- Next prev page -->
                     {{ $currentNode := . }}
                     
                     {{ template "menu-nextprev" dict "menu" .Site.Home "currentnode" $currentNode }}
@@ -57,18 +57,20 @@
                     {{ else }}
                         <i class="fas fa-arrow-alt-circle-right" style="margin-top: 10%; position: relative; font-size: 2.5em;"> </i>
                     {{end}}
-                    </div>
-            </div>
+                    </div>  */}}
+            {{/*  </div>
 
             <div id="header">
                 {{ partial "logo.html" . }}
             </div>
 
             <div>
-                <a href="https://github.com/LongKira-Obsidian24" style="margin: 10px 10px 10px 10px;">
-                    <img src="/images/head/white_github.png" alt="Tile" style="display: inline; height: 64px;">
-                </a>
+
             </div>
+        </div>  */}}
+
+        <div id="header">
+            {{ partial "logo.html" . }}
         </div>
 
         <div id="lower" style="display: grid; grid-template-columns: 1fr 300px ;">
