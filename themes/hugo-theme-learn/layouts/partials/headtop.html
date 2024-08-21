@@ -1,0 +1,82 @@
+<nav id="topbar" class="{{if $.Site.Params.showVisitedLinks }}showVisitedLinks{{end}}">
+
+    {{ $currentNode := . }}
+    {{ $showvisitedlinks := .Site.Params.showVisitedLinks }}
+
+    <div id="header-wrapper">
+        <div id="upper" style="display: grid; grid-template-columns: 270px 1fr 300px;">
+            <div id="navigation-buttons" style="display: grid; grid-template-columns: 1fr 1fr;">
+                    <!-- Next prev page -->
+                    {{ $currentNode := . }}
+                    
+                    {{ template "menu-nextprev" dict "menu" .Site.Home "currentnode" $currentNode }}
+                    
+                    {{ define "menu-nextprev" }}
+                        {{$currentNode := .currentnode }}
+                        {{ if ne .menu.Params.hidden true}}
+                            {{if hasPrefix $currentNode.RelPermalink .menu.RelPermalink }}
+                                {{ $currentNode.Scratch.Set "NextPageOK" "OK" }}
+                                {{ $currentNode.Scratch.Set "prevPage" ($currentNode.Scratch.Get "prevPageTmp") }}
+                            {{else}}
+                                {{if eq ($currentNode.Scratch.Get "NextPageOK") "OK"}}
+                                    {{ $currentNode.Scratch.Set "NextPageOK" nil }}
+                                    {{ $currentNode.Scratch.Set "nextPage" .menu }}
+                                {{end}}
+                            {{end}}
+                            {{ $currentNode.Scratch.Set "prevPageTmp" .menu }}
+
+                                {{ $currentNode.Scratch.Set "pages" .menu.Pages }}
+                                {{ if .menu.IsHome}}
+                                    {{ $currentNode.Scratch.Set "pages" .menu.Sections }}
+                                {{ else if .menu.Sections}}
+                                    {{ $currentNode.Scratch.Set "pages" (.menu.Pages | union .menu.Sections) }}
+                                {{end}}
+                                {{ $pages := ($currentNode.Scratch.Get "pages") }}
+
+                                {{ range $pages.ByWeight  }}
+                                    {{ template "menu-nextprev" dict "menu" . "currentnode" $currentNode }}
+                                {{end}}
+                        {{ end }}
+                    {{ end }}
+                    <div id="nav-back"> 
+                    {{with ($.Scratch.Get "prevPage")}}
+                        <a class="nav nav-prev" href="{{.RelPermalink}}" title="{{.Title}}">
+                            <i class="fa fa-chevron-left" style="margin-top: 20%; position: relative;"></i>
+                        </a>
+                    {{ else }}
+                        <i class="fa fa-chevron-left" style="margin-top: 20%; position: relative;"> </i>
+                    {{end}}
+                    </div>
+
+                    <div id="nav-next"> 
+                    {{with ($.Scratch.Get "nextPage")}}
+                        <a class="nav nav-next" href="{{.RelPermalink}}" title="{{.Title}}">
+                            <i class="fa fa-chevron-right" style="margin-top: 20%; position: relative;"></i>
+                        </a>
+                    {{ else }}
+                        <i class="fa fa-chevron-right" style="margin-top: 20%; position: relative;"> </i>
+                    {{end}}
+                    </div>
+            </div>
+
+            <div id="header">
+                {{ partial "logo.html" . }}
+            </div>
+
+            <div>
+                <a href="https://github.com/LongKira-Obsidian24" style="margin: 10px 10px 10px 10px;">
+                    <img src="/images/head/white_github.png" alt="Tile" style="display: inline; height: 64px;">
+                </a>
+            </div>
+        </div>
+
+        <div id="lower" style="display: grid; grid-template-columns: 1fr 300px ;">
+            {{ partial "top-bar.html" . }}
+            {{if not .Site.Params.disableSearch}}
+            {{ partial "search.html" . }}
+            {{end}}
+        </div>
+        
+
+    </div>
+</nav>
