@@ -1,8 +1,9 @@
 ---
-title: "Giới thiệu"
+title: "Công nghệ"
 date: "`r Sys.Date()`"
-weight: 2
+weight: 6
 chapter: false
 # pre: "<b>  </b>"
 ---
 
+### Hmm

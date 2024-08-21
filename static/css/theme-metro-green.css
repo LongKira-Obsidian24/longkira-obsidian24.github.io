@@ -1,6 +1,6 @@
 
 :root{
-    
+
     --MAIN-TEXT-color:#323232; /* Color of text by default */
     --MAIN-TITLES-TEXT-color: #5e5e5e; /* Color of titles h2-h3-h4-h5 */
     --MAIN-LINK-color:#599a3e; /* Color of links */
@@ -12,7 +12,7 @@
     
     --MENU-SEARCH-BG-color:#b3f696; /* Search field background color (by default borders + icons) */
     --MENU-SEARCH-BOX-color: #5a9442; /* Override search field border color */
-    --MENU-SEARCH-BOX-ICONS-color: #c7f7c4; /* Override search field icons color */
+    --MENU-SEARCH-BOX-ICONS-color: #1b3319; /* Override search field icons color */
 
     --MENU-SECTIONS-ACTIVE-BG-color:#1b211c; /* Background color of the active section and its childs */
     --MENU-SECTIONS-BG-color:#222723; /* Background color of other sections */
@@ -23,7 +23,7 @@
 
     --MENU-VISITED-color: #599a3e; /* Color of 'page visited' icons in menu */
     --MENU-SECTION-HR-color: #18211c; /* Color of <hr> separator in menu */
-    
+
 }
 
 body {
@@ -55,6 +55,39 @@ a:hover {
 	color: var(--MENU-VISITED-color);
 }
 
+.fas {
+    color: var(--MENU-SEARCH-BG-color);
+}
+
+#sidebar #footer {
+  padding-top: 20px !important;
+}
+
+#sidebar #footer h2.github-title {
+  font-size: 20px;
+  color: #fd9827 !important;
+  margin: 10px 0px 5px;
+  padding: 0px;
+  font-weight: normal !important;
+  margin-top: 10px;
+  padding-top: 30px;
+  border-top: 1px dotted #384657;
+}
+
+#sidebar #footer h3.github-title {
+  font-size: 14px;
+  margin: 10px 0px 5px;
+  padding: 0px;
+  text-transform: uppercase;
+  letter-spacing: .15px;
+}
+
+#sidebar #footer h5.copyright, #sidebar #footer p.build-number {
+  font-size: 10px;
+  letter-spacing: .15px;
+  line-height: 150% !important;
+}
+
 #body a.highlight:after {
     display: block;
     content: "";
@@ -68,17 +101,37 @@ a:hover {
 }
 #sidebar {
 	background-color: var(--MENU-SECTIONS-BG-color);
+    background-image: linear-gradient(to right, #141815 , #151815 ,#212522);
 }
-#header-wrapper {
+
+#topbar {
+    z-index:1;
+    background-size: 100% 100%;
+    background: var(--MENU-HEADER-BG-color);
+    color: var(--MENU-SEARCH-BOX-color);
+    border-color: var(--MENU-HEADER-BORDER-color);
+    position: sticky;
+    top: 0;
+}
+
+#topbar #header-wrapper {
     background: var(--MENU-HEADER-BG-color);
     background-image: url("/images/head/metro_bg.jpg");
+    background-size: 100% 100%;
     color: var(--MENU-SEARCH-BOX-color);
-    border-bottom: 4px solid var(--MENU-HEADER-BORDER-color);
+    border-color: var(--MENU-HEADER-BORDER-color);
 }
-.searchbox {
+#topbar .searchbox {
 	border-color: var(--MENU-SEARCH-BOX-color);
     background: var(--MENU-SEARCH-BG-color);
 }
+#sidebar ul.topics > li.parent, #sidebar ul.topics > li.active {
+    background: var(--MENU-SECTIONS-ACTIVE-BG-color);
+}
+#topbar .searchbox * {
+    color: var(--MENU-SEARCH-BOX-ICONS-color);
+}
+
 .searchbox input::-webkit-input-placeholder {
     color: rgba(0, 0, 0 , 0.6);
 }
@@ -90,16 +143,6 @@ a:hover {
 }
 .searchbox input:-ms-input-placeholder {
     color: rgba(0, 0, 0 , 0.6);
-}
-#sidebar ul.topics > li.parent, #sidebar ul.topics > li.active {
-    background: var(--MENU-SECTIONS-ACTIVE-BG-color);
-}
-#topbar .searchbox * {
-    color: var(--MENU-SEARCH-BOX-ICONS-color);
-}
-
-.fas {
-    color: var(--MENU-SEARCH-BG-color);
 }
 
 #sidebar a {
@@ -119,10 +162,68 @@ a:hover {
     border-color: var(--MENU-SECTION-HR-color);
 }
 
-#body .tags a.tag-link {
-    background-color: var(--MENU-HEADER-BG-color);    
+#navigation a.nav-prev, #navigation a.nav-next {
+    color: #f19e39 !important;
 }
 
-#body .tags a.tag-link:before {
-    border-right-color: var(--MENU-HEADER-BG-color);
+#navigation a.nav-prev:hover, #navigation a.nav-next:hover  {
+    color: #e07d04 !important;
 }
+
+div.notices p:first-child:before {
+    position: absolute;
+    top: 2px;
+    color: #fff;
+    font-family: 'Font Awesome\ 5 Free';
+    content: #F06A;
+    font-weight: 900; /* Fix version 5.0.9 */
+    left: 10px;
+}
+
+body {
+    color: var(--MAIN-TEXT-color) !important;
+    background-image: url("/images/bg/m_head_blend.jpg");
+    background-size: 100% 100%;
+    font-family: 'Montserrat', sans-serif;
+	text-align: left;
+}
+
+h1, h2, h3, h4, h5 {
+    color: var(--MAIN-TITLES-TEXT-color) !important;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default, .ui-button, html .ui-button.ui-state-disabled:hover, html .ui-button.ui-state-disabled:active {
+    border: 1px solid #dddddd;
+    font-weight: normal;
+    color: #454545;
+}
+
+.ui-state-active, .ui-widget-content .ui-state-active, .ui-widget-header .ui-state-active, a.ui-button:active, .ui-button:active, .ui-button.ui-state-active:hover {
+    border: 1px solid var(--MENU-HEADER-BG-color);
+    background: var(--MENU-HEADER-BG-color);
+    font-weight: normal;
+    color: #fff;
+}
+
+.ui-widget.ui-widget-content {
+    border: 1px solid #eeeeee;
+}
+
+.ui-widget-header {
+  border: 1px solid #eeeeee;
+}
+
+.hljs {
+  background-color: none; 
+}
+
+pre {
+  background-color: var(--MENU-SECTIONS-BG-color) !important;
+}
+
+div.notices.info p {
+    border-top: 30px solid #fd9827;
+    background: #FFF2DB;
+}
+

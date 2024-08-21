@@ -3,7 +3,7 @@ title: "Start"
 date: "`r Sys.Date()`"
 weight: 1
 chapter: false
-# pre: "<b> 1. </b>"
+# pre: "<b>  </b>"
 ---
 
 ### This is what we call "Home"-page

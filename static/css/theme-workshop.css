@@ -101,9 +101,8 @@ a:hover {
 
 #topbar {
     z-index:1;
-    background-image: url("/images/head/metro_bg.jpg");
     background-size: 100% 100%;
-    /* background: var(--MENU-HEADER-BG-color); */
+    background: var(--MENU-HEADER-BG-color);
     color: var(--MENU-SEARCH-BOX-color);
     border-color: var(--MENU-HEADER-BORDER-color);
     position: sticky;
@@ -111,12 +110,15 @@ a:hover {
 }
 
 #topbar #header-wrapper {
-    background-image: url("/images/head/metro_bg.jpg");
     background-size: 100% 100%;
-    /* background: var(--MENU-HEADER-BG-color); */
     color: var(--MENU-SEARCH-BOX-color);
     border-color: var(--MENU-HEADER-BORDER-color);
 }
+
+.fas {
+    color: var(--MENU-SEARCH-BG-color);
+}
+
 #topbar .searchbox {
 	border-color: var(--MENU-SEARCH-BOX-color);
     background: var(--MENU-SEARCH-BG-color);
