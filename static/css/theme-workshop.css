@@ -8,7 +8,7 @@
     --MAIN-ANCHOR-color: #4881cd; /* color of anchors on titles */
 
     --MENU-HEADER-BG-color:#283e5b; /* Background color of menu header */
-    --MENU-HEADER-BORDER-color:#435c7c; /*Color of menu header border */
+    --MENU-HEADER-BORDER-color:#ffcf21; /*Color of menu header border */
 
     --MENU-SEARCH-BG-color:#202c3c; /* Search field background color (by default borders + icons) */
     --MENU-SEARCH-BOX-color: #4d6584; /* Override search field border color */
@@ -101,7 +101,9 @@ a:hover {
 
 #topbar {
     z-index:1;
-    background: var(--MENU-HEADER-BG-color);
+    background-image: url("/images/head/metro_bg.jpg");
+    background-size: 100% 100%;
+    /* background: var(--MENU-HEADER-BG-color); */
     color: var(--MENU-SEARCH-BOX-color);
     border-color: var(--MENU-HEADER-BORDER-color);
     position: sticky;
@@ -109,7 +111,9 @@ a:hover {
 }
 
 #topbar #header-wrapper {
-    background: var(--MENU-HEADER-BG-color);
+    background-image: url("/images/head/metro_bg.jpg");
+    background-size: 100% 100%;
+    /* background: var(--MENU-HEADER-BG-color); */
     color: var(--MENU-SEARCH-BOX-color);
     border-color: var(--MENU-HEADER-BORDER-color);
 }

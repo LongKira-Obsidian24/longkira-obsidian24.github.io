@@ -6,7 +6,10 @@
 {{if .Site.Home.Content }} 
 {{.Site.Home.Content}}
 {{ else if .GetPage "/start" }}
-{{ with .GetPage "/start" }}{{.Render}}{{end}}	
+{{ with .GetPage "/start" }}
+	<h1>{{ .Title }}</h1>
+  	{{ .Content }}
+{{end}}	
 {{else}}           
 	{{if eq .Site.Language.Lang "fr"}}
 		<h1>Personaliser la page d'accueil</h1>
