@@ -4,7 +4,9 @@
 </span>
 
 {{if .Site.Home.Content }} 
-{{.Site.Home.Content}}	
+{{.Site.Home.Content}}
+{{ else if .GetPage "/start" }}
+{{ with .GetPage "/start" }}{{.Render}}{{end}}	
 {{else}}           
 	{{if eq .Site.Language.Lang "fr"}}
 		<h1>Personaliser la page d'accueil</h1>
